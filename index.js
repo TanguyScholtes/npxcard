@@ -61,4 +61,10 @@ async function displayCard () {
     console.log( boxen( card, boxenOptions ) );
 }
 
+function clearScreen () {
+    console.clear();
+    console.log('\x1Bc');
+}
+
+clearScreen();
 displayCard();

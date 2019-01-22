@@ -1,6 +1,6 @@
 {
   "name": "tanguyscholtes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI visit card using NPX - Part of Becode studentship",
   "main": "index.js",
   "scripts": {

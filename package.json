@@ -1,0 +1,36 @@
+{
+  "name": "tanguyscholtes",
+  "version": "0.0.1",
+  "description": "A CLI visit card using NPX - Part of Becode studentship",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "node ."
+  },
+  "bin": {
+    "tanguyscholtes": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanguyScholtes/npxcard.git"
+  },
+  "keywords": [
+    "node",
+    "nodeJS",
+    "cli",
+    "js",
+    "javascript"
+  ],
+  "author": "Tanguy Scholtes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TanguyScholtes/npxcard/issues"
+  },
+  "homepage": "https://github.com/TanguyScholtes/npxcard#readme",
+  "dependencies": {
+    "boxen": "^2.1.0",
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.1",
+    "gradient-string": "^1.2.0"
+  }
+}

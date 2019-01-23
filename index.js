@@ -81,8 +81,10 @@ async function displayCard () {
     let firstname = await displayString( '    Tanguy', 'rgb(185, 0, 0)', 'rgb(125, 0, 0)', 'Bloody' );
     let lastname = await displayString( '   Scholtes', 'rgb(125, 0, 0)', 'rgb(90, 0, 0)', 'Bloody' );
     let work = await displayString( "   Web developer", 'rgb(50, 130, 195)', 'rgb(45, 60, 210)', 'Cybermedium' );
+    /*
     console.log( '\n' );
     console.log( await terminalImage.file( './res/me.png' ) );
+    */
 
     console.log( boxen( card, boxenOptions ) );
 }

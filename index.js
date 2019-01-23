@@ -5,36 +5,42 @@ const figlet = require( 'figlet' );
 const boxen = require( 'boxen' );
 const gradient = require( 'gradient-string' );
 
+/*
+ * Display all available Figlet fonts
+ */
+/*
+figlet.fonts(function(err, fonts) {
+    if (err) {
+        console.log('something went wrong...');
+        console.dir(err);
+        return;
+    }
+    console.dir(fonts);
+});
+return;
+*/
+
 const boxenOptions = {
     borderColor: '#2D3CD2',
     borderStyle: 'round',
     margin: {
         top: 2,
         bottom: 2,
-        left: 41,
-        right: 41
+        left: 8,
+        right: 8
     },
     padding: 1
 };
 
-const datas = {
-    linebreak: '\n',
-    linkedin: chalk.blue.bold( 'Linkedin:' ) + chalk.white( ' https://www.linkedin.com/in/' ) + chalk.blue( 'tanguy-scholtes-907366172' ),
-    github: chalk.gray.bold( '           GitHub:' ) + chalk.white( ' https://github.com/' ) + chalk.cyan( 'TanguyScholtes' ),
-    npm: chalk.red.bold( "           NPM:" ) + chalk.white( ' https://www.npmjs.com/' ) + chalk.red( '~tanguyscholtes' ),
-    web: chalk.green.bold( '                 Web:' ) + chalk.green( ' http://tanguyscholtes.be/' )
-};
-
-const card = datas.linebreak +
-            datas.linkedin + datas.linebreak +
-            datas.github + datas.linebreak +
-            datas.npm + datas.linebreak +
-            datas.web + datas.linebreak;
+const card = '\n' +
+            chalk.blue.bold( 'Linkedin:' ) + chalk.white( ' https://www.linkedin.com/in/' ) + chalk.blue( 'tanguy-scholtes-907366172' ) + '\n' +
+            chalk.gray.bold( '           GitHub:' ) + chalk.white( ' https://github.com/' ) + chalk.cyan( 'TanguyScholtes' ) + '\n' +
+            chalk.red.bold( "           NPM:" ) + chalk.white( ' https://www.npmjs.com/' ) + chalk.red( '~tanguyscholtes' ) + '\n' +
+            chalk.green.bold( '                 Web:' ) + chalk.green( ' http://tanguyscholtes.be/' ) + '\n';
 
 function displayString ( string, startColor, endColor, font ) {
     figlet( string,
         {
-            kerning: 'fitted',
             font: font
         },
         function( error, string ) {
@@ -55,8 +61,9 @@ function displayString ( string, startColor, endColor, font ) {
 }
 
 async function displayCard () {
-    let name = await displayString( 'Tanguy Scholtes', 'rgb(185, 0, 0)', 'rgb(210, 145, 45)', 'Univers' );
-    let work = await displayString( "              Web developper", 'rgb(50, 130, 195)', 'rgb(45, 60, 210)', 'cybermedium' );
+    let firstname = await displayString( '    Tanguy', 'rgb(185, 0, 0)', 'rgb(125, 0, 0)', 'Bloody' );
+    let lastname = await displayString( '   Scholtes', 'rgb(125, 0, 0)', 'rgb(90, 0, 0)', 'Bloody' );
+    let work = await displayString( "   Web developper", 'rgb(50, 130, 195)', 'rgb(45, 60, 210)', 'Cybermedium' );
 
     console.log( boxen( card, boxenOptions ) );
 }

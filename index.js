@@ -4,6 +4,7 @@ const chalk = require( 'chalk' );
 const figlet = require( 'figlet' );
 const boxen = require( 'boxen' );
 const gradient = require( 'gradient-string' );
+const terminalImage = require( 'terminal-image' );
 
 /*
  * Display all available Figlet fonts
@@ -32,11 +33,27 @@ const boxenOptions = {
     padding: 1
 };
 
+const phoenix = '    ／"\'￣フ／)          、' + '\n' +
+                '  ,/ ,--、 ￣､__フ      ／/' + '\n' +
+                '  ,ヘｌ⌒ﾉ   ＞       ,／ /＿' + '\n' +
+                ' ( ＿l_"_ニ_ く＿  ／） ／ ／' + '\n' +
+                '  ゛ ,＞      フ､    ､､＞' + '\n' +
+                '   <" （      フ _＿＞' + '\n' +
+                '   ヽ  ＼､､ ＿フ\' ノ' + '\n' +
+                '    ＼、＿＿､､,_ノ゛' + '\n' +
+                '         〉ﾆ〉ﾆ〉' + '\n' +
+                '       ,､_/ﾆ/ﾆ/' + '\n' +
+                '     ∠ｌ∠ｌ､ニ＞';
+
+
 const card = '\n' +
             chalk.blue.bold( 'Linkedin:' ) + chalk.white( ' https://www.linkedin.com/in/' ) + chalk.blue( 'tanguy-scholtes-907366172' ) + '\n' +
             chalk.gray.bold( '           GitHub:' ) + chalk.white( ' https://github.com/' ) + chalk.cyan( 'TanguyScholtes' ) + '\n' +
             chalk.red.bold( "           NPM:" ) + chalk.white( ' https://www.npmjs.com/' ) + chalk.red( '~tanguyscholtes' ) + '\n' +
-            chalk.green.bold( '                 Web:' ) + chalk.green( ' http://tanguyscholtes.be/' ) + '\n';
+            chalk.green.bold( '                 Web:' ) + chalk.green( ' http://tanguyscholtes.be/' ) + '\n' +
+            '\n' +
+            '\n' +
+            phoenix;
 
 function displayString ( string, startColor, endColor, font ) {
     figlet( string,
@@ -64,6 +81,8 @@ async function displayCard () {
     let firstname = await displayString( '    Tanguy', 'rgb(185, 0, 0)', 'rgb(125, 0, 0)', 'Bloody' );
     let lastname = await displayString( '   Scholtes', 'rgb(125, 0, 0)', 'rgb(90, 0, 0)', 'Bloody' );
     let work = await displayString( "   Web developer", 'rgb(50, 130, 195)', 'rgb(45, 60, 210)', 'Cybermedium' );
+    console.log( '\n' );
+    console.log( await terminalImage.file( './res/me.png' ) );
 
     console.log( boxen( card, boxenOptions ) );
 }

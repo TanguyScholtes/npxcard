@@ -4,7 +4,6 @@ const chalk = require( 'chalk' );
 const figlet = require( 'figlet' );
 const boxen = require( 'boxen' );
 const gradient = require( 'gradient-string' );
-const terminalImage = require( 'terminal-image' );
 
 /*
  * Display all available Figlet fonts
@@ -32,6 +31,26 @@ const boxenOptions = {
     },
     padding: 1
 };
+
+const chocoboWin = '                               ██' + '\n' +
+                   '                           ██   ██' + '\n' +
+                   '                          ██ ███  █' + '\n' +
+                   '                         █        █' + '\n' +
+                   '                        █  █     █' + '\n' +
+                   '                        █  █      █' + '\n' +
+                   '                       █         ██' + '\n' +
+                   '                       ████     █    █' + '\n' +
+                   '                       █   █   █     █' + '\n' +
+                   '                           █   ███  █ █' + '\n' +
+                   '                          █       ██ █' + '\n' +
+                   '                         █          ███' + '\n' +
+                   '                         █           █' + '\n' +
+                   '                           █     █  █' + '\n' +
+                   '                             ██   ███' + '\n' +
+                   '                               ████' + '\n' +
+                   '                                  █' + '\n' +
+                   '                                  █' + '\n' +
+                   '                                ██ █' + '\n';
 
 const chocobo = '                      ／"\'￣フ／)         、' + '\n' +
                 '                    ,/ ,--.￣､__フ      ／/' + '\n' +
@@ -81,6 +100,8 @@ async function displayCard () {
 
     if ( !process.env.OS.match( /(?:Windows|Win|WS)/gi ) ) {
         card += '\n' + '\n' + '\n' + chocobo;
+    } else {
+        card += '\n' + '\n' + '\n' + chocoboWin;
     }
 
     console.log( boxen( card, boxenOptions ) );

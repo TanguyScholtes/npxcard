@@ -98,7 +98,7 @@ async function displayCard () {
     let lastname = await displayString( '   Scholtes', 'rgb(125, 0, 0)', 'rgb(90, 0, 0)', 'Bloody' );
     let work = await displayString( "   Web developer", 'rgb(50, 130, 195)', 'rgb(45, 60, 210)', 'Cybermedium' );
 
-    if ( !process.env.OS.match( /(?:Windows|Win|WS)/gi ) ) {
+    if ( !process.platform.match( /(?:Windows|Win|WS)/gi ) ) {
         card += '\n' + '\n' + '\n' + chocobo;
     } else {
         card += '\n' + '\n' + '\n' + chocoboWin;

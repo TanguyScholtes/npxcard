@@ -31,6 +31,7 @@
     "boxen": "^2.1.0",
     "chalk": "^2.4.2",
     "figlet": "^1.2.1",
-    "gradient-string": "^1.2.0"
+    "gradient-string": "^1.2.0",
+    "terminal-image": "^0.1.2"
   }
 }
